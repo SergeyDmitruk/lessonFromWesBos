@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Drum kit from WesBos</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+</head>
+<body class="body">
+
+    <div class="panel">
+        <div class="panel__key" data-key="65">
+            <kdb class="panel__letter">A</kdb>
+            <span class="panel__sound">clap</span>
+        </div>
+        <div class="panel__key" data-key="83">
+            <kdb class="panel__letter">S</kdb>
+            <span class="panel__sound">hithat</span>
+        </div>
+        <div class="panel__key" data-key="68">
+            <kdb class="panel__letter">d</kdb>
+            <span class="panel__sound">kick</span>
+        </div>
+        <div class="panel__key" data-key="70">
+            <kdb class="panel__letter">f</kdb>
+            <span class="panel__sound">openhat</span>
+        </div>
+        <div class="panel__key" data-key="71">
+            <kdb class="panel__letter">g</kdb>
+            <span class="panel__sound">boom</span>
+        </div>
+        <div class="panel__key" data-key="72">
+            <kdb class="panel__letter">h</kdb>
+            <span class="panel__sound">ride</span>
+        </div>
+        <div class="panel__key" data-key="74">
+            <kdb class="panel__letter">j</kdb>
+            <span class="panel__sound">snare</span>
+        </div>
+        <div class="panel__key" data-key="75">
+            <kdb class="panel__letter">k</kdb>
+            <span class="panel__sound">tom</span>
+        </div>
+        <div class="panel__key" data-key="76">
+            <kdb class="panel__letter">l</kdb>
+            <span class="panel__sound">tink</span>
+        </div>
+    </div>
+    <audio data-key="65" src="sound/claps.WAV"></audio>
+    <audio data-key="83" src="sound/hihat.wav"></audio>
+    <audio data-key="68" src="sound/big-v-kick-drum.wav"></audio>
+    <audio data-key="70" src="sound/boom.wav"></audio>
+    <audio data-key="71" src="sound/boom.wav"></audio>
+    <audio data-key="72" src="sound/ride.WAV"></audio>
+    <audio data-key="74" src="sound/snare.wav"></audio>
+    <audio data-key="75" src="sound/tom.wav"></audio>
+    <audio data-key="76" src="sound/big-v-kick-drum.wav"></audio>
+
+    <script>
+        'use strict';
+
+        function playSound(e){
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`.panel__key[data-key='${e.keyCode}']`);
+
+            if(!audio) return; // stop the funtion from running all together
+            audio.currentTime = 0; // rewind to the start
+            audio.play();
+            key.classList.add('playing');
+        };
+
+
+        function removeTransition(e){
+            if(e.propertyName !== 'transform') return; // skip it if it`s not a transform
+            this.classList.remove('playing');
+        };
+
+        const keys = document.querySelectorAll('.panel__key');
+        keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+        window.addEventListener('keydown', playSound);
+    </script>
+</body>
+</html>

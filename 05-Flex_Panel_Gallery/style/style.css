@@ -1,0 +1,137 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.body{
+    background-color: #182F3E;
+    font-family: 'Amatic SC', cursive;
+    line-height: 2;
+    width: 100%;
+}
+.gallery{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery__item{
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    height: 100vh;
+    transition:
+        font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+        background 0.8s;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.gallery__item--first{
+    background-image: url('../img/img1.jpg')
+}
+.gallery__item--second{
+    background-image: url('../img/img2.jpg')
+}
+.gallery__item--third{
+    background-image: url('../img/img3.jpg')
+}
+.gallery__item--four{
+    background-image: url('../img/img4.jpg')
+}
+.gallery__item--five{
+    background-image: url('../img/img5.jpg')
+}
+
+.word{
+    font-size: 5vw;
+    font-weight: 200;
+    text-transform: uppercase;
+    transition: transform 0.5s;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.word--top,
+.word--bottom{
+    font-size: 2vw;
+}
+.word--top{
+    transform: translateY(-100%);
+}
+.word--bottom{
+    transform: translateY(100%);
+}
+
+.gallery__item.active{
+    flex: 5;
+}
+
+.active .word{
+    font-size: 7vw;
+}
+
+.active-open .word--top ,
+.active-open .word--bottom{
+    transform: translateY(0);
+    font-size: 4vw;
+}

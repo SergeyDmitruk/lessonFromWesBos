@@ -6,7 +6,7 @@ const cities = [];
 
     fetch(endpoint)
         .then(blob => blob.json())
-        .then(data => cities.push(...data))
+        .then(data => cities.push(...data));
 
 
     function findMatches(wordToMach, cities) {
@@ -32,7 +32,7 @@ const cities = [];
                         <span class="population"> ${numberWithCommas(place.population)}</span>
                     </li>
                 `;
-            }).join('')
+            }).join('');
         suggestions.innerHTML = html;
         console.log(matchArray);
     }

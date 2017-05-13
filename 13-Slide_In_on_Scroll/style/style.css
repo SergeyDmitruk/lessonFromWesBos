@@ -1,0 +1,24 @@
+.body{
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial;
+}
+
+.slide-in{
+    float: left;
+    opacity: 0;
+    transition: 1s;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-right: 10px;
+    transform: translateX(-1000%);
+}
+.slide-in.active{
+    opacity: 1;
+    transform: translateX(0%);
+}
+.under-img{
+    clear: right;
+
+}

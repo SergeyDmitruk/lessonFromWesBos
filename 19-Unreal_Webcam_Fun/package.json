@@ -1,0 +1,15 @@
+{
+  "name": "uwf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js.js",
+  "dependencies": {
+    "browser-sync": "^2.18.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start" : "browser-sync start --server --files '*.css, *.html, *.js'"
+  },
+  "author": "",
+  "license": "ISC"
+}

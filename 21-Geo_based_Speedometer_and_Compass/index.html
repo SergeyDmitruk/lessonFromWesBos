@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Geolocation based Speedometer and Compass</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <div class="arrow">
+    </div>
+    <div class="speed-value">
+    </div>
+
+    <script>
+        'use strict';
+
+        const arrow = document.querySelector('.arrow');
+        const speed = document.querySelector('.speed-value');
+
+        navigation.geolocation.watchPosition((data) => {
+            console.log(data);
+            speed.textContent = data.coords.speed;
+            arrow.style.transform = `rotate(${data.coords.heading}deg)`;
+        }, (err) =>{
+            console.log(err);
+            alert("What? Where are you?");
+        })
+    </script>
+</body>
+</html>

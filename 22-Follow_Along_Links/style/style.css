@@ -1,0 +1,114 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background: -moz-linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(5,193,255,1) 83%, rgba(0,0,0,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,0,0,1)), color-stop(83%, rgba(5,193,255,1)), color-stop(100%, rgba(0,0,0,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(5,193,255,1) 83%, rgba(0,0,0,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(5,193,255,1) 83%, rgba(0,0,0,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(5,193,255,1) 83%, rgba(0,0,0,1) 100%); /* ie10+ */
+    background: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(5,193,255,1) 83%, rgba(0,0,0,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#FF0000',GradientType=1 ); /* ie6-9 */
+    width: 100vw;
+    height: 100vh;
+}
+.container{
+    max-width: 1060px;
+    width: 100%;
+    margin: 0 auto;
+}
+.nav__menu{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    min-height: 65px;
+    flex-flow: row wrap;
+    border-bottom: 1px solid #000000;
+}
+.nav__item{
+    flex-grow:; 1;
+    text-align: center;
+}
+.nav__link, a {
+    color: #000000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 10px;
+    z-index: 2;
+    position: relative;
+}
+.nav__link:hover{
+    text-decoration: none;
+}
+
+.wrapper{
+    width: 100%;
+    margin: 40px 0;
+}
+
+.hightlight{
+    position: absolute;
+    display: block;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    background-color: #ffffff;
+    border-radius: 15px;
+}
